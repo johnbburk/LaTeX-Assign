@@ -1,0 +1,244 @@
+%% Problems style
+%% Author: Mark Hickman
+%% Date: 27 February 2009
+%% Copyright (c) 2009 Mark Hickman
+%
+% Permission is granted to copy, distribute and/or modify this
+% software under the terms of the LaTeX Project Public License
+% (LPPL), version 1.3.
+%
+% The LPPL maintenance status of this software is
+% 'author-maintained'.
+%
+% This software is provided 'as is', without warranty of any kind,
+% either expressed or implied, including, but not limited to, the
+% implied warranties of merchantability and fitness for a
+% particular purpose.
+
+\ProvidesPackage{problems}
+         [27/2/2009 Local LaTeX file]
+\def\fileversion{v1.0}
+\def\filedate{27/2/2009}
+\def\docdate {27/2/2009}
+
+\typeout{Style Option: `problems'
+  \fileversion\space <\filedate> (Mark Hickman)}
+
+
+
+\NeedsTeXFormat{LaTeX2e}
+
+\newcommand{\theSolution}{}
+
+\newcommand{\msh@biboptions}{sorting=none,backend=bibtex8,defernums=true}
+
+\newcommand{\msh@format}{\DeclareBibliographyDriver{question}{%
+\printfield{problem}}}
+
+\newcommand{\NotinSolution}[1]{#1}
+
+\newcommand{\SolutionColour}[1]{#1}
+
+\newcommand{\Marks}[2][]{}
+
+\def\Instructions#1{\def\theInstructions{#1}}
+\def\theInstructions{\relax}
+
+
+
+\newcommand{\SolutionFormat}[1]{\DeclareFieldFormat{solution}{#1 ##1}%
+\renewcommand{\SolutionColour}[1]{#1 ##1}}
+\def\MarksFormat#1{\def\theMarksFormat{#1}}%
+\def\theMarksFormat{\bf}
+\def\AtEndSolution#1{\def\theAtEndSolution{#1}}
+\def\theAtEndSolution{\newpage}
+
+
+
+\DeclareOption{solution}{\renewcommand{\theSolution}{\space Solutions}
+\renewcommand{\NotinSolution}[1]{}
+\renewcommand{\Instructions}[1]{}
+\renewcommand{\msh@format}{\DeclareBibliographyDriver{question}{%
+\printfield{problem}\par
+\vspace{0.02\textwidth}
+\par
+\SolutionColour{\textsc{\bf Solution:}}\par
+\vspace{0.01\textwidth}\par
+\printfield{solution}\par
+\theAtEndSolution
+}}}
+
+\DeclareOption{database}{\renewcommand{\msh@biboptions}{sorting=debug,backend=bibtex8,defernums=true,bibstyle=draft}}
+
+\DeclareOption{marks}{\renewcommand{\Marks}[2][]{\theMarksFormat \par\bigskip
+  \textbf{\sc Marks: Total #2.} \par #1}}
+
+\DeclareOption*{\PassOptionsToPackage{\CurrentOption}{biblatex}}
+
+\ProcessOptions
+
+\RequirePackage[\msh@biboptions]{biblatex}%
+
+% For earlier versions of biblatex
+%\def\blx@auxinit#1{%
+%  \blx@auxwrite\blx@theauxout{%
+%    \ifx\blx@theauxout\@mainaux\else
+%      \blx@msg@aux
+%    \fi
+%    \string\bibstyle{question}%
+%    \expandafter\ifblank
+%    \expandafter{#1}
+%      {}
+%      {\blx@newlinechar
+%       \string\bibdata{\blx@ctrlfile\blxauxsuffix,#1}\blx@newlinechar
+%       \string\citation{biblatex-control}}}}
+
+\def\blx@auxinit#1{%
+  \blx@auxwrite\blx@theauxout{%
+    \ifx\blx@theauxout\@mainaux
+    \else
+      \blx@msg@aux
+    \fi
+    \ifnum\blx@backend=\blx@backend@biber
+      \expandafter\ifblank\expandafter{#1}
+        {}
+        {\string\bibdata{#1}}%
+    \else
+      \string\bibstyle{question}\blx@nl
+      \string\bibdata{%
+        \blx@ctrlfile\blxauxsuffix
+        \expandafter\ifblank\expandafter{#1}
+          {}
+          {,#1}}\blx@nl
+      \string\citation{biblatex-control}
+    \fi}}
+
+\def\blx@auxinit@bibtex#1{%
+  \blx@auxwrite\blx@auxout@bibtex{}{%
+    \ifx\blx@auxout@bibtex\@mainaux
+    \else
+      \blx@msg@aux
+    \fi
+    \string\bibstyle{question}\blx@nl
+    \string\bibdata{%
+      \blx@ctrlfile\blxauxsuffix
+      \expandafter\ifblank\expandafter{#1}
+	{}
+	{,#1}}\blx@nl
+    \string\citation{biblatex-control}}}
+
+\DeclareFieldFormat{problem}{#1}
+\DeclareFieldFormat{solution}{#1}
+
+\def\Problemskip#1{\setlength{\bibitemsep}{#1}}
+
+\msh@format
+
+\newcommand{\msh@left}{}
+
+
+\renewcommand{\bibleftbracket}{\msh@left}
+\renewcommand{\bibrightbracket}{.}
+
+\defbibheading{bibliography}{}
+
+
+\newcommand{\problems}[2][]{%
+\newrefsegment%
+\nocite{#2}%
+\printbibliography[segment=\therefsegment,#1]
+\renewcommand{\bibleftbracket}{\msh@left}}
+
+\define@key{blx@bib}{prefix}{\renewcommand{\bibleftbracket}{#1\msh@left}}
+
+
+
+
+\newcommand{\insertpdf}[2][scale=0.9]{\par\includegraphics[#1]{#2}\par}
+
+\@enumdepth = 1
+
+\setlength{\leftmarginii}{0.12\textwidth}
+\setlength{\leftmarginiii}{0.06\textwidth}
+
+\let\msh@input\@currdir
+
+\def\InputDir#1{
+\msh@path{#1}{\@ifundefined{input@path}{}{\input@path}}
+{\@ifundefined{Ginput@path}{}{\Ginput@path}}}
+
+\def\msh@path#1#2#3{
+\protected@edef\input@path{{#1}#2}
+\protected@edef\Ginput@path{{#1}#3}
+\def\msh@input{#1}}
+
+
+
+\newcommand{\Database}[1]{\bibliography{\msh@input #1}}
+\let\printproblems\printbibliography
+
+\newcommand{\NoLabels}{\ExecuteBibliographyOptions{labelnumber=false}
+\renewcommand{\bibrightbracket}{}}
+
+\newlength\msh@label
+\settowidth{\msh@label}{**}
+\addtolength{\msh@label}{\labelnumberwidth}
+
+\def\Course#1{\def\theCourse{#1}}
+\def\theCourse{\relax}
+
+\def\Year#1{\def\theYear{#1}}
+\def\theYear{\relax}
+
+\def\Occurence#1{\def\theOccurence{#1}}
+\def\theOccurence{\relax}
+
+\def\Tutorial#1{\def\theTutorial{#1}}
+\def\theTutorial{Tutorial}
+
+\newcommand{\TutorialNumber}[2][\theTutorialNumber .]{\def\theTutorialNumber{#2}%
+\renewcommand{\msh@left}{#1}%
+\renewcommand{\bibrightbracket}{} \settowidth{\labelnumberwidth}{#1 .} \addtolength{\labelnumberwidth}{\msh@label}}
+\def\theTutorialNumber{\relax}
+
+\newcommand{\TutorialIndex}[2]{\renewcommand{\msh@left}{#1}%
+\renewcommand{\bibrightbracket}{#2}
+\settowidth{\labelnumberwidth}{#1 . #2} \addtolength{\labelnumberwidth}{\msh@label}}
+
+\def\TutorialDate#1{\def\theTutorialDate{#1}}
+\def\theTutorialDate{\relax}
+
+
+
+\newcommand{\TutorialHeader}{\begin{center}
+
+{\bf\Large\sc \theCourse-\theYear\theOccurence \space \theTutorial
+ \space \theTutorialNumber  \theSolution}
+
+\vspace{0.01\textwidth}
+
+{\bf\sc \theTutorialDate}
+
+\end{center}
+
+\vspace{0.01\textwidth}
+
+\theInstructions
+
+\vspace{0.02\textwidth}}
+
+\newcommand{\tutorial}[2][]{%
+\TutorialHeader
+
+\problems[#1]{#2}}
+
+
+
+ 
+
+
+
+
+
+
+\endinput

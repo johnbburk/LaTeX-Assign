@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+
+\setlength{\topmargin}{-.75in} \addtolength{\textheight}{2.00in}
+\setlength{\oddsidemargin}{.00in} \addtolength{\textwidth}{.75in}
+
+\usepackage{amsmath,color,graphicx}
+\usepackage{type1cm}
+\usepackage{eso-pic}
+\usepackage[hmargin=2cm,vmargin=1.3cm]{geometry}
+\usepackage{mathabx}
+\usepackage[rflt]{floatflt}
+
+\nofiles
+
+\pagestyle{empty}
+
+\setlength{\parindent}{0in}
+
+% Watermark: graph paper
+\newcommand\BackgroundPic{
+\put(0,0){
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{plain.pdf}%
+\vfill
+}}}
+
+\begin{document}
+
+% Watermark
+\AddToShipoutPicture{\BackgroundPic}
+
+\noindent {\sc {\bf {\Large 
+% Name here
+}}
+            \hfill CVPM-GMM}
+
+\noindent {\sc   Honors 1/2}
+            \hfill {\large 4/9/12}
+    
+\bigskip
+
+{\bf \Large{1.}} The surface area of a sphere is increasing at a rate of 2 ${\rm cm}^2/s$. Find the rate at which the radius is increasing when the radius is $10$ cm.
+
+\vfill
+
+\newpage
+
+{\bf Problem 2. }(5 points.) Prove or disprove the Riemann Hypothesis.
+
+
+
+
+\end{document}

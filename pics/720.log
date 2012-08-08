@@ -1,0 +1,17 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdftex 2011.7.3)  11 JUL 2012 11:36
+entering extended mode
+ \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**720.tex
+(./720.tex
+./720.tex:7: Undefined control sequence.
+l.7 \AddToShipoutPicture
+                        *{\BackgroundPic}
+? 
+./720.tex:7: Emergency stop.
+l.7 \AddToShipoutPicture
+                        *{\BackgroundPic}
+End of file on the terminal!
+
+./720.tex:7:  ==> Fatal error occurred, no output PDF file produced!

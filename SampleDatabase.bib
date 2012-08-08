@@ -1,0 +1,290 @@
+% This file was created with JabRef 2.5.
+% Encoding: Cp1252
+
+@QUESTION{1-1,
+  problem = {In the lectures it was claimed that the discontinuous function 
+	
+	\[ u(x, \ t) = \begin{cases} 0 & x < ct \\ e^{-(x-ct)} & x \geq ct
+	\end{cases} \]
+	
+	was a solution to the linear convection equation
+	
+	\[ u_t + cu_x = 0. \]
+	
+	Show that this solution does, indeed, satisfy the integral form of
+	this equation. ({\em Note:} Only the case $a < ct < b$ need be considered
+	since, for other choices, $u$ is continuous and differentiable on
+	the interval $(a, \ b)$.)},
+  solution = {\insertpdf{Q1-1}},
+  keywords = {tutorial, solutions},
+  owner = {msh51},
+  timestamp = {2009.02.24}
+}
+
+@QUESTION{1-2,
+  problem = {Pinchover \& Rubinstein 1.2(c)},
+  solution = {\insertpdf{Q1-2}},
+  keywords = {tutorial, solutions},
+  comment = {Pinchover \& Rubinstein Section 1.7 Q1.2(c)},
+  owner = {msh51},
+  timestamp = {2009.02.24}
+}
+
+@QUESTION{1-3,
+  problem = {Linear homogeneous PDEs with constant coefficients admit complex solutions
+	of the form \[ u(x, \ t) = A e^{i(kx-\omega t)}, \] which are called
+	{\em plane waves}. The real and imaginary parts of this
+	
+	complex solution give real solutions. Here $A$ is the amplitude, $k$
+	is
+	
+	the wave number and $\omega$ is the temporal frequency. When the plane
+	
+	wave form is substituted into a PDE there results a {\em dispersion
+	
+	 relation} of the form $\omega = \omega(k)$ which states how the
+	
+	frequency depends on the wave number. For each of the following PDEs,
+	
+	find the dispersion relation and describe the resulting plane waves
+	by
+	
+	sketching (or use {\sc Maple}) wave profiles at different times.
+	
+	\be
+	
+	\item $u_t = D u_{xx}$ (heat equation).
+	
+	\item $u_{tt} -c^2 \, u_{xx} = 0$ (wave equation).
+	
+	\item $u_t+u_{xxx}=0$ (linearized Korteweg-de Vries equation -
+	
+	 approximates waves on shallow water surfaces).
+	
+	\item $u_t=i\, u_{xx}$ (Schr\"{o}dinger equation). 
+	
+	\ee},
+  solution = {\insertpdf{Q1-32-up}},
+  keywords = {tutorial, solutions},
+  comment = {Logan 2nd ed 1.1 Q10},
+  owner = {msh51},
+  timestamp = {2009.02.24}
+}
+
+@QUESTION{1-4,
+  problem = {Find necessary conditions on $F$ so that the system \begin{align*}
+	u_x &= u \\ u_y &= F(u) \end{align*} has a solution.},
+  solution = {We have \begin{align*} u_{xy} &= u_y = F(u) \\ u_{yx} &= F'(u) \,
+	u_x = F'(u) \, u \end{align*} and so $F$ must satisfy \[ F = F' \,
+	u \] that is \[ F = c \, u \] for some constant $c$.},
+  keywords = {tutorial, solutions},
+  owner = {msh51},
+  timestamp = {2009.02.24}
+}
+
+
+
+@QUESTION{S1,
+  problem = {Show that the series 
+	
+	\[ \sum_{k=1}^\infty (-1)^k\, \tfrac{\log k}{k} \] 
+	
+	converges. Does it converge absolutely?},
+  solution = {Let $\phi=\tfrac{\log x}{x}$. Since $\phi' = \tfrac{1 - \log x}{x}
+	< 0 $ for $x>e$, the sequence $\{\tfrac{\log x}{x}\}$ is decreasing.
+	Furthermore, L'H\^{o}pital's rule gives
+	
+	\[ \lim_{x \rightarrow \infty} \frac{\log x }{x} = \lim_{x \rightarrow
+	\infty} =\frac{1/x}{1} = 0. \]
+	
+	Therefore $ \lim_{k \rightarrow \infty} \tfrac{\log k }{k} = 0$ and
+	so by the alternating series test, this series {\bf converges}.
+	
+	For $k \geq 3$, $\log k > 1$ and so 
+	
+	\[ \frac{\log k}{k} > \frac{1}{k}. \]
+	
+	Since the harmonic series $\sum \tfrac{1}{k}$ diverges, the series
+	of absolute values will also diverge; that is the series is {\bf
+	not absolutely convergent}.},
+  keywords = {Series},
+  comment = {AC 10.6 Q6},
+  owner = {msh51},
+  timestamp = {2009.09.14}
+}
+
+@QUESTION{S2,
+  problem = {Is the series
+	
+	\[ \sum_{k=1}^\infty \frac{(-1)^{k+1}}{\sqrt{k+1} + \sqrt{k}} \]
+	
+	absolutely convergent, conditionally convergent or divergent?},
+  solution = {Note that
+	
+	\[ \sqrt{k+2} + \sqrt{k+1} > \sqrt{k+1} + \sqrt{k} \]
+	
+	and so
+	
+	\[ \frac{1}{\sqrt{k+2} + \sqrt{k+1}} < \frac{1}{\sqrt{k+1} + \sqrt{k}
+	}.\]
+	
+	Therefore the sequence is decreasing. Furthmore
+	
+	\[ \lim_{k\rightarrow \infty} \frac{1}{\sqrt{k+2} + \sqrt{k+1}}= 0.
+	\]
+	
+	Thus, by the alternating series test, this series converges. However
+	
+	\[ \frac{1}{\sqrt{k+1} + \sqrt{k} } > \frac{2}{\sqrt{k}} \] 
+	
+	and so by the comparison test (with $\sum \tfrac{1}{\sqrt{k}}$) the
+	series of absolute values diverges. Therefore the series is {\bf
+	conditionally convergent}.},
+  keywords = {Series},
+  comment = {AC10.6 Q26},
+  owner = {msh51},
+  timestamp = {2009.09.16}
+}
+
+@QUESTION{S3,
+  problem = {Is the series
+	
+	\[ \sum_{k=1}^\infty \frac{(-1)^{k-1} \, 3^{2k-1}}{k^2+1} \]
+	
+	absolutely convergent, conditionally convergent or divergent?},
+  solution = {Series {\bf diverges} since 
+	
+	\[\frac{3^{2k-1}}{k^2+1} \rightarrow \infty \] 
+	
+	as $k \rightarrow \infty$.},
+  keywords = {Series},
+  comment = {AC10.6 Q30},
+  owner = {msh51},
+  timestamp = {2009.09.16}
+}
+
+@QUESTION{11-4,
+  problem = {Find the radius and interval of convergence for the power series
+	
+	\[ \sum _{k=1}^{\infty} \frac{ (-1)^{k} \, x^{2k}}{(2k)!}. \]},
+  solution = {We have
+	
+	\[ \rho = \lim _{k \rightarrow\infty} \frac{| x|^2}{(2k+2)\,(2k+1)}
+	= 0 \]
+	
+	and so the {\bf the radius of convergence is $\infty$} and {\bf the
+	interval of convergence is $- \infty< x < \infty$}.},
+  keywords = {Series},
+  comment = {AC10.8 Q34},
+  owner = {msh51},
+  timestamp = {2009.09.16}
+}
+
+@QUESTION{11-5,
+  problem = {Find the radius and interval of convergence for the power series
+	
+	\[ \sum _{k=1}^{\infty} (-1)^{k+1} \, \frac{(x+1)^k}{k}. \]},
+  solution = {The series will converge when 
+	
+	\[ \rho = \lim _{k \rightarrow\infty} \frac{k | x+1|}{k+1} = |x+1|<
+	1; \]
+	
+	that is $-2 < x < 0$.
+	
+	It will diverge when $|x+1|>1$, At $x=-2$ we have $\sum \tfrac{-1}{k}$
+	which diverges (harmonic series). At $x=0$ we have $\sum \tfrac{(-1)^{k+1}}{k}$
+	which converges (by alternating series test). Therefore {\bf the
+	radius of convergence is $1$} and {\bf the interval of convergence
+	is $-2 < x \leq 0$}.},
+  keywords = {Series},
+  comment = {AC10.8 Q41},
+  owner = {msh51},
+  timestamp = {2009.09.16}
+}
+
+@QUESTION{11-6,
+  problem = {Find the Taylor series about $x=0$ for $\sinh x$. Express this series
+	using the sigma notation.},
+  solution = {We have
+	
+	\[ \sinh x = \tfrac{1}{2} \, ( e^x- e^{-x} ) \] 
+	
+	and so the Taylor series is given by
+	
+	\begin{align*} 
+	
+	\frac{1}{2} \left( \sum_{k=0}^\infty \frac{x^k}{k!} - \sum_{k=0}^\infty
+	\frac{(-x)^k}{k!} \right)&= \frac{1}{2} \left( \sum_{k=0}^\infty
+	\frac{x^k}{k!} - \sum_{k=0}^\infty (-1)^k \, \frac{x^k}{k!} \right)
+	\\
+	
+	&= \frac{1}{2} \sum_{k=0}^\infty (1-(-1)^k) \, \frac{x^k}{k!} \\
+	
+	&= \sum_{k=0}^\infty \frac{x^{2k+1}}{(2k+1)!} 
+	
+	\end{align*}
+	
+	since $1-(-1)^k$ is $0$ for $k$ even and $2$ for $k$ odd.},
+  keywords = {Series},
+  comment = {AC10.8 Q8},
+  owner = {msh51},
+  timestamp = {2009.09.16}
+}
+
+@QUESTION{11-7,
+  problem = {Find the Taylor series about $x=1$ for $\sin \pi x$. Express this
+	series using the sigma notation.},
+  solution = {Let $f(x) = \sin \pi x$ then
+	
+	\[ f'(x) = \pi \, \cos \pi x, \ f''(x) = {} - \pi^2 \, \sin \pi x,
+	\ f'''(x) = {} - \pi^3 \, \cos \pi x, \ f^{(4)}(x) = \pi^4 \, \sin
+	\pi x, \ \ldots .\]
+	
+	Now $\sin \pi = 0$ and $\cos \pi =-1$, therefore
+	
+	\[ f^{(2k)} (1) = 0 \text{ and } f^{(2k+1)} (1) = (-1)^{k+1} \, \pi^{2k+1}.
+	\]
+	
+	Thus the Taylor series will be
+	
+	\[ \sum_{k=0}^\infty \frac{(-1)^{k+1} \,\pi^{2k+1}}{(2k+1)!} \, (x-1)^{2k+1}.
+	\]},
+  keywords = {Series},
+  owner = {msh51},
+  timestamp = {2009.09.16}
+}
+
+@QUESTION{2-1,
+  problem = {The one dimensional (linear) wave equation is given by \bq \pder[2]{u}{t^2}
+	= c^2 \, \pder[2]{u}{x^2} \label{wave} \eq where $c$ is the (constant)
+	wave speed. Show that this equation may be rewritten as the coupled
+	system of two first order equations \begin{align*} u_t - c \, u_x
+	&= w \\ w_t + c \, w_x &= 0. \end{align*} Hence show that the general
+	solution of (\ref{wave}) is \[ u(x, \ t) = F(x-ct) + G(x+ct) \] for
+	arbitrary functions $F$ and $G$.},
+  solution = {Let $w=u_t-cu_x$. Then \[ w_t+cw_x = (u _t-cu_x)_t + c(u_t-cu_x)_x
+	= u_{tt}-c^2\,u_{xx} = 0. \] Solving $w_t+cw_x=0 $ by the method
+	of characteristics, gives $w(x, \ t) = P(x-ct)$ for some arbitrary
+	function $P$. Thus \[ u_t - c \, u_x = P(x-ct). \] The characteristic
+	variables for this equation are $t=\tau$ and $x = \xi -c \tau$. In
+	characteristic variables, the equation is \[ U_\tau = P(\xi-c\tau-c\tau)
+	= P(\xi-2c\tau) \] and so \[ U = F(\xi) + G(\xi-2c\tau) \] where
+	$G'=-\frac{P}{2c}$ (an arbitrary function!). Finally we obtain \[
+	u(x, \ t) = F(x+ct) +G(x+ct-2ct) = F(x+ct) + G(x-ct) \] as required.},
+  keywords = {tutorial, characteristics},
+  owner = {msh51},
+  timestamp = {2009.03.02}
+}
+
+@comment{jabref-meta: selector_publisher:}
+
+@comment{jabref-meta: selector_author:}
+
+@comment{jabref-meta: selector_journal:}
+
+@comment{jabref-meta: selector_keywords:2005;2006;2007;2008;2009;assig
+nment;characteristics;classification;exam;heat;separation;solutions;tr
+ansform;tutorial;wave;}
+
+@comment{jabref-entrytype: Question: req[problem;solution] opt[keywords;crossref;comment]}
+

@@ -1,0 +1,80 @@
+\documentclass[11pt]{article}
+
+\usepackage{problems} 
+
+
+
+%To include solutions, replace above line with
+%
+%\usepackage[solution]{problems}
+%
+
+%% If database is not in the same directory as the .tex file (or not on
+%% the TEXINPUTS path then uncomment (with correct path, of course)
+%%
+%% \InputDir{C:/tex/361/Problems/}
+%%
+
+
+%% Name of database (without .bib extension)
+
+\Database{SampleDatabase}
+
+%% The following are used in the default layout given by \tutorial 
+
+\Course{MATH361}
+
+%% The default title is Tutorial. If you want to change this uncomment
+%% the following.
+%%
+%% \Tutorial{Assignment}
+%%
+
+\Year{09}
+
+\Occurence{S1}
+
+\TutorialNumber{2}
+
+\TutorialDate{March 24-26}
+
+%% If you want to add some instructions uncomment
+%%
+%% \Instructions{Hand you assignments in by March 26.}
+%%
+
+%% If you wish to jazz up the format for solutions (needs xcolor package loaded)
+ % \SolutionFormat{\color{green!40!black}}
+%%
+
+\begin{document}
+
+
+%% To use the standard layout
+
+\tutorial{1-1,1-2,1-3}
+
+%% For something a bit more complex.
+%%
+%% This inserts the standard header
+%%
+%% \TutorialHeader
+%%
+%% \section*{\sc\bf Homework Problems}
+%%
+%% \problems{1-1,1-2,1-3}
+%% \problems[prefix=*]{1-4} % Stars the problem
+%% \problems{S1}
+%% 
+%% \section*{\sc\bf Additional Problems}
+%%
+%% \problems[prefix=**]{S2} % Double stars the problem
+%%
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

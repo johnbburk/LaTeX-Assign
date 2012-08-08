@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+
+\setlength{\topmargin}{-.75in} \addtolength{\textheight}{2.00in}
+\setlength{\oddsidemargin}{.00in} \addtolength{\textwidth}{.75in}
+
+\usepackage{amsmath,color,graphicx, array}
+\usepackage{type1cm}
+\usepackage{eso-pic}
+\usepackage[hmargin=2cm,vmargin=1.3cm]{geometry}
+\usepackage{mathabx}
+\usepackage[rflt]{/Users/jgates/desktop/latex/floatflt}
+\usepackage{enumerate}
+\usepackage{multicol}
+
+\nofiles
+
+\pagestyle{empty}
+
+\setlength{\parindent}{0in}
+
+% Watermark: graph paper
+\newcommand\BackgroundPic{
+\put(0,0){
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{/Users/jgates/desktop/latex/pics/plain.pdf}%
+\vfill
+}}}
+
+%Lab Reminder section command
+\newcommand{\labreminders}{
+\vspace{-5mm} Be sure to: \vspace{-3mm}\begin{itemize} \itemsep1pt \parskip0pt \parsep0pt 
+\renewcommand{\labelitemi}{$\rightarrow$}
+\item Use pencil
+\item Label your axes with symbols and units
+\item Give the graph a title (“[vertical axis variable] vs. [horizontal axis variable]”)
+\item Draw a best fit line/curve (don't connect the dots).
+\item Find the slope using points on the line (not data points).
+\item Write the equation of the line using the variables from your axes (don't default to “y and x”); make sure the constants (like slope and intercept) have the correct units attached to the numbers.
+\item Put units on numbers, but never on variables
+\end{itemize}
+}
+
+%Diagram box command [v space][content]
+\newcommand{\diagrambox}[2][40 mm]{
+\framebox{\parbox{175 mm}{#2 \hfill \\ \vspace{#1}}}
+
+\bigskip
+}
+
+% PNum: problem numbering command
+\newcounter{ProbNum}
+\newcommand{\PNum}{
+\addtocounter {ProbNum} {1}
+{\bf \Large{\arabic{ProbNum}}.}
+}
+
+% MakeList: [example number] [content]
+\newcommand{\MakeList}[2]{
+\begin{enumerate}[#1] \itemsep1pt \parskip0pt \parsep0pt 
+#2
+\end{enumerate}
+}

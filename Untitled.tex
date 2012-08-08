@@ -1,0 +1,35 @@
+\documentclass[12pt]{article}
+\usepackage[table]{xcolor}
+\usepackage{graphicx}
+\usepackage{array}
+\def\Tab#1{\tabular[t]{>{\rule[-1ex]{0pt}{3ex}}c}#1\endtabular}
+\newcolumntype{C}{@{}c@{}}
+
+\begin{document}
+
+\begin{tiny}
+\begin{table}[ht]
+\centering
+ \begin{tabular}{|C|C|C|C|C|}\hline
+\Tab{Tri Sankhya \\\hline 
+     Pra Trik\\Dvi Trik\\Tri Trik\\Cha Trik\\ Pan Trik\\ Shas Trik\\ Sap Trik}
+&
+\Tab{Vihbakti\\\hline 
+     Prathama\\ Dvitiya\\Trutiya\\Chaturthi\\Panchami\\Shashthi\\Saptami}
+&
+\Tab{Ekavachana \\\hline
+     Su (s)\\Am\\Ta (A)\\Ne (E)\\Nasi (as)\\Nas (as)\\Ni (ee)}
+&
+\Tab{Dvivachana\\hline
+     Au\\Aut (Au)\\Bhyam\\Bhyam\\Bhyam\\Os\\ Os}
+& 
+\Tab{Bahuvachana\\\hline
+ \cellcolor{blue!20}
+  \rotatebox{90}{~\parbox{3.5cm}{%
+  Here comes the rotated text, which can also be 
+  typeset in several lines.}~}}  
+  \\\hline
+\end{tabular}
+\end{table}
+\end{tiny}
+\end{document} 

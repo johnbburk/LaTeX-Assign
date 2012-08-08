@@ -1,0 +1,23 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  5 JUN 2012 16:21
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**" -output-directory=/Users/jgates/desktop/latex/reassessments "  -aux-directo
+ry=/Users/jgates/desktop/latex/aux  /Users/jgates/desktop/latex/reassessments/P
+attiTheresa
+
+! Emergency stop.
+<*> ...Users/jgates/desktop/latex/reassessments " 
+                                                   -aux-directory=/Users/jga...
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 4 strings out of 493633
+ 159 string characters out of 3143378
+ 49245 words of memory out of 3000000
+ 3405 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 831 hyphenation exceptions out of 8191
+ 0i,0n,0p,1b,6s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

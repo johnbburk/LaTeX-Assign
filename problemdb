@@ -1,0 +1,51 @@
+# Problem DB builder and inspector
+#
+
+import glob
+import os
+
+# Build DB
+# Find .tex files
+
+os.chdir("/Users/jgates/desktop/latex/pics")
+
+masterqlist = []
+
+for files in glob.glob("*.tex"):
+    masterqlist.append(files)
+
+# Build dictionary with Q # as key, list of tags as array inside
+
+for i in range(len(masterqlist)):
+    print masterqlist[i]
+
+errort
+
+problemDB = dict()
+
+for line in list:
+    if line[0] in years_dict:
+     
+        problemDB[line[0]].append(line[1])
+    else:
+        # create a new array in this slot
+        problemDB[line[0]] = [line[1]]
+
+    
+# Display standard count
+
+# Open problems
+
+# Extract number
+
+# Extract standards
+
+# Query desired standard 1
+
+# Query desired standard 2
+
+# Search problem list
+
+# Display problems
+
+

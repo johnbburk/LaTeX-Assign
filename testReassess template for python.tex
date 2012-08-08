@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+
+\setlength{\topmargin}{-.75in} \addtolength{\textheight}{2.00in}
+\setlength{\oddsidemargin}{.00in} \addtolength{\textwidth}{.75in}
+
+\usepackage{amsmath,color,graphicx}
+\usepackage{type1cm}
+\usepackage{eso-pic}
+\usepackage[hmargin=2cm,vmargin=1.3cm]{geometry}
+\usepackage{mathabx}
+\usepackage[rflt]{floatflt}
+
+\nofiles
+
+\pagestyle{empty}
+
+\setlength{\parindent}{0in}
+
+% Watermark: graph paper
+\newcommand\BackgroundPic{
+\put(0,0){
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{plain.pdf}%
+\vfill
+}}}
+
+\begin{document}
+
+% Watermark
+\AddToShipoutPicture{\BackgroundPic}
+
+% Name section
+
+\noindent {\sc {\bf {\Large Patti, Theresa }} \hfillC14-Shadows and Eclipses}\noindent {\sc Physics 1/2 }\hfill {\large May 9}\bigskip
+
+% Question section
+
+{\bf \Large{
+% VAR: number here
+.}} 
+% VAR: Question here
+
+\newpage
+
+% VAR: Standard tables here
+
+\end{document}

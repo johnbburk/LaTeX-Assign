@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+
+\setlength{\topmargin}{-.75in} \addtolength{\textheight}{2.00in}
+\setlength{\oddsidemargin}{.00in} \addtolength{\textwidth}{.75in}
+
+\usepackage{amsmath,color,graphicx,array,multirow,rotating, enumerate}
+\usepackage{type1cm}
+\usepackage{eso-pic}
+\usepackage[hmargin=2cm,vmargin=1.3cm]{geometry}
+\usepackage{mathabx}
+\usepackage[rflt]{/Users/jgates/desktop/latex/floatflt}
+\usepackage[table]{xcolor}
+\nofiles
+
+\def\Tab#1{\tabular[t]{>{\rule[-1ex]{0pt}{3ex}}c}#1\endtabular}
+\newcolumntype{C}{@{}c@{}}
+
+\pagestyle{empty}
+\newcounter{ProbNum}
+\setlength{\parindent}{0in}
+
+% Watermark: graph paper
+\newcommand\BackgroundPic{
+\put(0,0){
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{/Users/jgates/desktop/latex/pics/plain.pdf}%
+\vfill
+}}}
+
+%Diagram box command [v space][content]
+\newcommand{\diagrambox}[2][40 mm]{
+\framebox{\parbox{175 mm}{#2 \hfill \\ \vspace{#1}}}
+
+\bigskip
+}
+
+% MakeList: [example number] [content]
+\newcommand{\MakeList}[2]{
+\begin{enumerate}[#1] \itemsep1pt \parskip0pt \parsep0pt  
+
+#2
+\end{enumerate}
+}
+
+\begin{document}
+
